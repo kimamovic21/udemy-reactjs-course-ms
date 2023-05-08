@@ -4,7 +4,7 @@ import Card from './Card';
 import './ExpenseItem.css';
 
 const ExpenseItem = (props) => {
-  // console.log(props);  // { ... }
+  console.log(props);  // { ... }
   
   return (
     <Card className='expense-item'>
