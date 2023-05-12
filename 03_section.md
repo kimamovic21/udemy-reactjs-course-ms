@@ -1,4 +1,5 @@
 React - The Complete Guide  (03_section)
+React Basics & Working With Components
 
 32. 
 -unutar src foldera kreiramo components folder

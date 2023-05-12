@@ -1,4 +1,5 @@
 React - The Complete Guide (04_section)
+React State & Working with Events
 
 46. 
 -unutar src foldera kreiramo 04_components folder
@@ -96,14 +97,17 @@ serveru, development serveru pretrazivaca
 -submitHandler funkciji dodajemo parametar event
 -submitHandler funkciji dodajemo event.preventDefault()
 -unutar submitHandler funkcije kreiramo expenseData objekat koji ce sadrzavat key-value parove
--title, amount i date su proizvoljni nazivi po izboru koji sadrzavaju nove unesene vrijednosti
+-title, amount i date su key proizvoljni nazivi, po izboru, koji sadrzavaju nove unesene vrijednosti
+-nove unesene vrijednosti su enteredTitle, enteredAmount i enteredDate su varijable iz useState() 
+-title: enteredTitle, amount: enteredAmount, date: new Date(enteredDate)
 -ispisujemo expanseData u konzoli
+-primjer - https://www.freecodecamp.org/news/how-to-validate-forms-in-react/
 
 
 57. 
 -dodavanje dvosmjernog vezivanja
--u ExpenseForm.jsx komponenti input elementima dodajemo value atribut
--unutar value atributa proslijedimo vrijednost prvog elementa niza od useState funkcije
+-u ExpenseForm.jsx komponenti, input elementima dodajemo value atribut
+-unutar value atributa proslijedimo vrijednost prvog elementa niza iz useState funkcije
 -u submitHandler funkciji pozivamo set funkcije sa praznim stringom
 
 
