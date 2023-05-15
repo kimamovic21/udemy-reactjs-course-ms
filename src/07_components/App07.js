@@ -1,0 +1,11 @@
+import React from 'react';
+
+const App07 = () => {
+  return (
+    <div>
+        <h1>Debugging React App</h1>
+    </div>
+  );
+};
+
+export default App07;
