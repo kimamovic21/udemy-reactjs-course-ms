@@ -5,6 +5,7 @@ import classes from './AddUser.module.css';
 import ErrorModal from '../UI/ErrorModal';
 
 const AddUser = (props) => {
+  // console.log(props);
 
   const [enteredUsername, setEnteredUsername] = useState('');
   const [enteredAge, setEnteredAge] = useState('');

@@ -6,9 +6,11 @@ import ErrorModal from '../UI/ErrorModal';
 import Wrapper from '../Helpers/Wrapper';
 
 const AddUser = (props) => {
+  // console.log(props);
 
   const nameInputRef = useRef();
   const ageInputRef = useRef();
+  // console.log(useRef());
 
   const [error, setError] = useState();
 
@@ -54,11 +56,10 @@ const AddUser = (props) => {
                     title={error.title} 
                     message={error.message}
                     onConfirm={errorHandler}
-                 />
-      )}
+                 />)
+      }
       
-      <Card className={classes.input}>
-
+      <Card className={classes['add-user']}>
           <form onSubmit={addUserHandler}>
               <label htmlFor='username'>Username</label>
               <input id='username' 
@@ -74,16 +75,10 @@ const AddUser = (props) => {
 
               <Button type='submit'>Add User</Button>
           </form>
-
       </Card>
+
     </Wrapper>
   );
 };
 
 export default AddUser;
-
-
-
-
-// Pisemo Button komponentu umjesto button elementa
-// <button type='submit'>Add User</button>

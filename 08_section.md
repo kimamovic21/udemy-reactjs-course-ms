@@ -6,7 +6,7 @@ Time to Practice: A Complete Practice Project
 -kreiranje User komponente
 -u folderu 08_components kreiramo UI i Users foldere
 -u Users folderu kreiramo AddUser.jsx komponentu
--unutar returj izjave dodajemo form element kao roditelj element
+-unutar return izjave dodajemo form element kao roditelj element
 -unutar form elementa dodajemo label i input elemente
 -na kraju unutar forme dodajemo button element
 -kreiramo addUserHandler funkciju

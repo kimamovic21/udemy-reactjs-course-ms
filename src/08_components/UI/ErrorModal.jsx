@@ -4,6 +4,8 @@ import Button from './Button';
 import classes from './ErrorModal.module.css';
 
 const ErrorModal = (props) => {
+//   console.log(props);
+
   return (
     <div>
 

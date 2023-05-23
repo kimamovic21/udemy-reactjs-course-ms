@@ -9,17 +9,35 @@ import App06 from './06_components/App06';
 import App07 from './07_components/App07';
 import App08 from './08_components/App08';
 import App09 from './09_components/App09';
+import App10 from './10_components/App10';
+import { AuthContextProvider } from './10_components/store/auth-context';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    {/* <App03 /> */}
-    {/* <App04 /> */}
-    {/* <App05 /> */}
-    {/* <App06 /> */}
-    {/* <App07 /> */}
-    {/* <App08 /> */}
-    <App09 />
-  </React.StrictMode>
+
+// Section 1 - 9
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <React.StrictMode>
+//         {/* <App /> */}
+//         {/* <App03 /> */}
+//         {/* <App04 /> */}
+//         {/* <App05 /> */}
+//         {/* <App06 /> */}
+//         {/* <App07 /> */}
+//         {/* <App08 /> */}
+//         <App09 />
+//   </React.StrictMode> 
+// );
+
+
+// Section 10
+const root10 = ReactDOM.createRoot(document.getElementById('root-10'));
+root10.render(
+  <AuthContextProvider>
+    <App10 />
+  </AuthContextProvider>
 );
+
+
+
+
+
