@@ -12,6 +12,8 @@ import App09 from './09_components/App09';
 import App10 from './10_components/App10';
 import { AuthContextProvider } from './10_components/store/auth-context';
 import App11 from './11_components/App11';
+import App12 from './12_components/App12';
+import App13 from './13_components/App13';
 
 
 // Section 1 - 9
@@ -26,7 +28,9 @@ root.render(
         {/* <App07 /> */}
         {/* <App08 /> */}
         {/* <App09 /> */}
-        <App11 />
+        {/* <App11 /> */}
+        {/* <App12 /> */}
+        {/* <App13 /> */}
   </React.StrictMode> 
 );
 
