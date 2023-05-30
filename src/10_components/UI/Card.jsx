@@ -5,7 +5,9 @@ const Card = (props) => {
   // console.log(props);
 
   return (
-    <div className={`${classes.card} ${props.className}`}>{props.children}</div>
+    <div className={`${classes.card} ${props.className}`}>
+      {props.children}
+    </div>
   );
 };
 

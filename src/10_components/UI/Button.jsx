@@ -5,13 +5,12 @@ const Button = (props) => {
 //   console.log(props);
 
   return (
-      <button
-          type={props.type || 'button'}
-          className={`${classes.button} ${props.className}`}
-          onClick={props.onClick}
-          disabled={props.disabled}
+      <button type={props.type || 'button'}
+              className={`${classes.button} ${props.className}`}
+              onClick={props.onClick}
+              disabled={props.disabled}
       >
-          {props.children}
+        {props.children}
       </button>
   );
 };

@@ -17,6 +17,6 @@ function App10() {
       </main>
     </React.Fragment>
   );
-}
+};
 
 export default App10;
