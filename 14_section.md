@@ -1,4 +1,4 @@
-React - The Complete Guide  (12_section)
+React - The Complete Guide  (14_section)
 Sending Http Requests (e.g. Connecting to a Database)
 
 176. 
@@ -32,7 +32,7 @@ Sending Http Requests (e.g. Connecting to a Database)
 -dodajemo error, setError useState hook
 -dodajemo try - catch blokove koda
 -dodajemo uslov if (!response.ok)
--u cacth bloku koda dodajemo setError funkciju
+-u catch bloku koda dodajemo setError funkciju
 -kreiramo varijablu content
 
 
