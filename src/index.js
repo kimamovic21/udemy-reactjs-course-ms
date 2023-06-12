@@ -17,6 +17,7 @@ import App13 from './13_components/App13';
 import App14 from './14_components/App14';
 import App15 from './15_components/App15';
 import App16 from './16_components/App16';
+import App17 from './17_components/App17';
 
 
 // Section 1 - 9
@@ -36,7 +37,8 @@ root.render(
         {/* <App13 /> */}
         {/* <App14 /> */}
         {/* <App15 /> */}
-        <App16 />
+        {/* <App16 /> */}
+        <App17 />
   </React.StrictMode> 
 );
 
