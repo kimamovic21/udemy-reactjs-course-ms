@@ -1,13 +1,14 @@
 import React from 'react';
 import classes from './Auth.module.css';
 import { useDispatch } from 'react-redux';
-import { authActions } from './store/myStore';
+import { authActions } from './store/auth';
 
 const Auth = () => {
   const dispatch = useDispatch();
-  const loginHandler = (e) => {
-    console.log('click');
-    e.preventDefault();
+
+  const loginHandler = (event) => {
+    event.preventDefault();
+
     dispatch(authActions.login());
   };
 
