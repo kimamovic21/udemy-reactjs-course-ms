@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { Provider } from 'react-redux';
+import store from './18_components/store/myStore';
 import App from './App';
 import App03 from './03_components/App03';
 import App04 from './04_components/App04';
@@ -18,9 +20,9 @@ import App14 from './14_components/App14';
 import App15 from './15_components/App15';
 import App16 from './16_components/App16';
 import App17 from './17_components/App17';
+import App18 from './18_components/App18';
 
 
-// Section 1 - 9
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -32,26 +34,18 @@ root.render(
         {/* <App07 /> */}
         {/* <App08 /> */}
         {/* <App09 /> */}
+        {/* <AuthContextProvider> */}
+          {/* <App10 /> */}
+        {/* </AuthContextProvider> */}
         {/* <App11 /> */}
         {/* <App12 /> */}
         {/* <App13 /> */}
         {/* <App14 /> */}
         {/* <App15 /> */}
         {/* <App16 /> */}
-        <App17 />
+        {/* <App17 /> */}
+        <Provider store={store}>
+          <App18 />
+        </Provider>
   </React.StrictMode> 
 );
-
-
-// Section 10
-// const root10 = ReactDOM.createRoot(document.getElementById('root-10'));
-// root10.render(
-//   <AuthContextProvider>
-//     <App10 />
-//   </AuthContextProvider>
-// );
-
-
-
-
-
