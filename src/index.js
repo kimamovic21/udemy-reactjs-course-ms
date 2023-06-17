@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
 // import store from './18_components/store/myStore';
+import store from './19_components/store/myStore';
+
 
 // import App from './App';
 // import App01 from './01_components/App01';
@@ -24,7 +26,7 @@ import './index.css';
 // import App16 from './16_components/App16';
 // import App17 from './17_components/App17';
 // import App18 from './18_components/App18';
-// import App20 from './20_components/App20';
+import App19 from './19_components/App19';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -54,6 +56,8 @@ root.render(
         {/* <Provider store={store}> */}
           {/* <App18 /> */}
         {/* </Provider> */}
-        {/* <App20/> */}
+        <Provider store={store}>
+          <App19/>
+        </Provider>
   </React.StrictMode> 
 );
