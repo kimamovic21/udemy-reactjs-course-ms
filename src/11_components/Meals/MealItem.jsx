@@ -27,7 +27,7 @@ const MealItem = (props) => {
                 {props.description}
             </div>
             <div className={classes.price}>
-                ${price}
+                {price}
             </div>
         </div>
 

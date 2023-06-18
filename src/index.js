@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import { Provider } from 'react-redux';
-// import store from './18_components/store/myStore';
-import store from './19_components/store/myStore';
+// import store from './18_components/store/index';
+// import store from './19_components/store/index';
 
 
-// import App from './App';
 // import App01 from './01_components/App01';
 // import App03 from './03_components/App03';
+// import App03b from './03b_components/App03b';
 // import App04 from './04_components/App04';
 // import App05 from './05_components/App05';
 // import App06 from './06_components/App06';
@@ -26,13 +25,12 @@ import store from './19_components/store/myStore';
 // import App16 from './16_components/App16';
 // import App17 from './17_components/App17';
 // import App18 from './18_components/App18';
-import App19 from './19_components/App19';
+// import App19 from './19_components/App19';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-        {/* <App /> */}
         {/* <App01 /> */}
         {/* <App03 /> */}
         {/* <App03b /> */}
@@ -56,8 +54,8 @@ root.render(
         {/* <Provider store={store}> */}
           {/* <App18 /> */}
         {/* </Provider> */}
-        <Provider store={store}>
-          <App19/>
-        </Provider>
+        {/* <Provider store={store}> */}
+          {/* <App19/> */}
+        {/* </Provider> */}
   </React.StrictMode> 
 );

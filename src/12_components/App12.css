@@ -1,3 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  background: #fff;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  margin-top: 6rem;
+}
+
 .app {
     margin: 3rem auto;
     width: 30rem;
@@ -11,8 +28,4 @@
     margin: 0;
     text-align: center;
     padding: 1rem;
-}
-
-.app p {
-    margin-bottom: 1rem;
 }

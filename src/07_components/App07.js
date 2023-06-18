@@ -1,4 +1,5 @@
 import React from 'react';
+import './App07.css';
 
 const App07 = () => {
   return (

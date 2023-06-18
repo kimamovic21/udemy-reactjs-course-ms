@@ -1,5 +1,5 @@
 import React from 'react';
-import ExpenseItem from './Expenses/ExpenseItem';
+import './App04.css';
 import Expenses from './Expenses/Expenses';
 import NewExpense from './NewExpense/NewExpense';
 

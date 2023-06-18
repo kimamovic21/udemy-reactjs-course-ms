@@ -1,26 +1,10 @@
-// import React from 'react';
-// import ForwardCounter from './ForwardCounter';
-// import BackwardCounter from './BackwardCounter';
-
-// const App15 = () => {
-//   return (
-//     <React.Fragment>
-//         <ForwardCounter />
-//         <BackwardCounter />
-//     </React.Fragment>
-//   );
-// };
-
-// export default App15;
-
-
-
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import './App15.css';
 import Tasks from './Tasks/Tasks';
 import NewTask from './NewTask/NewTask';
 import useHttp from './hooks/use-http';
 
-function App15() {
+const App15 = () => {
   const [tasks, setTasks] = useState([]);
 
   const { isLoading, error, sendRequest: fetchTasks } = useHttp();

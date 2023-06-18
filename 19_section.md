@@ -61,3 +61,77 @@ Advanced Redux
 -prvom button elementu u onClick dogadaj proslijedujemo removeItemHandler funkciju
 -drugom button elementu u onClick dogadaj proslijedujemo addItemHandler funkciju
 
+288. 
+-Redux i asinhroni kod
+
+
+289. 
+-Frontend kod vs Backend kod
+
+
+290. 
+-gdje da smjestimo nasu logiku 
+
+
+291. 
+-Koristenje useEffect sa Redux
+
+
+292. 
+-Problem sa useEffect()
+
+
+293. 
+-u App19.js fajl importujemo useSelector React hook
+-vrijednost useSelector() funkcije pohranjujemo u cart varijablu
+-importujemo useEffect() React hook
+-u App19.js fajlu kreiramo useEffect() React hook funkciju
+-u useEffect React hook, unutar callback funkcije, dodajemo fetch metodu
+-kreiramo firebase projekt udemy-react-19-ms-redux
+-u useEffect React hook funkciji kreiramo async funkciju
+-kreiramo Notification.jsx komponentu i Notification.module.css fajl
+-u ui-slice.js fajl kreiramo showNotification reducer funkciju
+-u initialState dodajemo notification: null
+-u App19.js fajl importujemo useDispatch React hook
+-kreiramo dispatch varijablu cija je vrijednost jednaka useDispatch funkciji
+-importujemo uiActions
+-u useEffect React hook dodajemo dispatch(uiActions.showNotification({ ... }))
+-dodajemo uslov if (!response.ok)
+-pozivamo dispatch funkciju
+-pozivamo funkciju sendCartData().catch(error => { ... })
+-u App19.js fajl importujemo Notification.jsx komponentu
+-u return izjavi, unutar React.Fragment roditelj elementa, dodajemo uslov notification && <Notification />
+-kreiramo varijablu let isInitial
+-dodajemo uslov if(isInitial)
+
+
+294. 
+-koristenje ideje kreatora akcije
+-u cart-slice.js fajl importujemo uiActions
+-u cart-slice.js fajlu kreiramo sendCartData funkciju
+-kreiramo sendRequest funkciju
+-u App19.js fajl importujemo sendCartData funkciju
+
+
+295. 
+-pocetak rada sa preuzimanjem podataka
+-kreiramo cart-actions.js fajl
+-u cart-actions.js fajlu kreiramo fetchCartData funkciju
+-u fetchCartData funkciju dodajemo dispatch funkciju
+-unutar dispatch funkcije dodajemo async fetchData funkciju
+-unutar fetchData funkcije dodajemo if uslov if (!response.ok)
+-u dispatch funkciju kreiramo try - catch blokove koda
+-u App19.js fajlu kreiramo jos jedan useEffect
+
+
+296. 
+-finaliziranje logike preuzimanje podataka
+-u App19.js fajlu dodajemo uslov if (cart.changed)
+
+
+297. 
+-istrazivanje Redux alata
+
+
+298. 
+-sazetak
