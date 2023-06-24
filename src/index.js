@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
+// import { Provider } from 'react-redux';
 // import store from './18_components/store/index';
 // import store from './19_components/store/index';
 
@@ -26,6 +26,8 @@ import { Provider } from 'react-redux';
 // import App17 from './17_components/App17';
 // import App18 from './18_components/App18';
 // import App19 from './19_components/App19';
+// import App20a from './20_components/project1/App20a';
+import App20b from './20_components/project2/App20b';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -57,5 +59,7 @@ root.render(
         {/* <Provider store={store}> */}
           {/* <App19/> */}
         {/* </Provider> */}
+        {/* <App20a /> */}
+        <App20b />
   </React.StrictMode> 
 );
