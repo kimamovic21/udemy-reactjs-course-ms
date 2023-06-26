@@ -27,7 +27,8 @@ import ReactDOM from 'react-dom/client';
 // import App18 from './18_components/App18';
 // import App19 from './19_components/App19';
 // import App20a from './20_components/project1/App20a';
-import App20b from './20_components/project2/App20b';
+// import App20b from './20_components/project2/App20b';
+import App28 from './28_components/App28';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -60,6 +61,7 @@ root.render(
           {/* <App19/> */}
         {/* </Provider> */}
         {/* <App20a /> */}
-        <App20b />
+        {/* <App20b /> */}
+        <App28 />
   </React.StrictMode> 
 );
