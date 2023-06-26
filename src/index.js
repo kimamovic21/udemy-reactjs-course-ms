@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import { Provider } from 'react-redux';
-// import store from './18_components/store/index';
-// import store from './19_components/store/index';
 
 
 // import App01 from './01_components/App01';
@@ -25,10 +23,13 @@ import ReactDOM from 'react-dom/client';
 // import App16 from './16_components/App16';
 // import App17 from './17_components/App17';
 // import App18 from './18_components/App18';
+// import store from './18_components/store/index';
 // import App19 from './19_components/App19';
+// import store from './19_components/store/index';
 // import App20a from './20_components/project1/App20a';
 // import App20b from './20_components/project2/App20b';
 import App28 from './28_components/App28';
+import AuthContextProvier from './28_components/context/auth-context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -62,6 +63,8 @@ root.render(
         {/* </Provider> */}
         {/* <App20a /> */}
         {/* <App20b /> */}
-        <App28 />
+        <AuthContextProvier>
+          <App28 />
+        </AuthContextProvier>
   </React.StrictMode> 
 );

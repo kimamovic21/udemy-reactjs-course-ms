@@ -9,6 +9,7 @@ const IngredientForm = React.memo(props => {
   // const [inputState, setInputState] = useState({ title: '', amount: '' });
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
+  console.log('Rendering Ingredient Form');
 
   const submitHandler = event => {
     event.preventDefault();

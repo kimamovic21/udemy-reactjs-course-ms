@@ -140,3 +140,44 @@ Assignment
 -unutar catch metode dodajemo setIsLoading(false)
 
 
+493. 
+-razumijevanje useReducer()
+-u Ingredients.jsx komponentu importujemo useReducer React hook
+-u Ingredients.jsx komponenti kreiramo ingredientReducer funkciju sa dva parametra
+-prvi parametar je stanje, a drugi parametar funkcija koja azurira stanje
+-u ingredientReducer funkciji dodajemo switch uslov
+-u Ingredients funkciji kreiramo const [userIngredients, dispatch] = useReducer(ingredientReducer, [])
+-u then metodama dodajemo disptach funkcije
+
+
+494. 
+-koristenje useReducer() za http stanje
+-u Ingredients.jsx komponenti kreiramo httpReducer funkciju
+-u httpReducer funkciji dodajemo switch uslov
+-kreiramo const [httpState, dispatchHttp] = useReducer(httpReducer, {loading: false, error: null})
+-u then metodama dodajemo dispatchHttp
+
+
+
+495. 
+-rad sa useContext()
+-u App.js fajl importujemo Auth komponentu
+-kreiramo folder context
+-unutar context foldera kreiramo auth-context.jsx komponentu
+-u auth-context komponenti kreiramo varijablu AuthContext
+-kreiramo AuthContextProvider funkciju
+-kreiramo const [isAuthenticated, setIsAuthenticated] = useState(false)
+-kreiramo loginHandler funkciju
+-u return izjavi kreiramo AuthContext.Provider 
+-u return izjavi AuthContext.Provider komponenti dodajemo value prop
+-u App.js fajl importujemo AuthContext i useContext React hook
+-u App.js fajlu kreiramo authContext varijablu
+-u Auth.jsx komponenti kreiramo authContext varijablu
+
+
+496. 
+-optimizacija performansi sa useMemo()
+-u Ingredients.jsx komponentu importujemo useCallback() React hook
+-funkcijama addIngredientHandler i removeIngredientHandler dodajemo useCallback() React hook
+-u Ingredients.jsx komponenti kreiramo ingredientList varijablu
+
