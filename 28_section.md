@@ -181,3 +181,31 @@ Assignment
 -funkcijama addIngredientHandler i removeIngredientHandler dodajemo useCallback() React hook
 -u Ingredients.jsx komponenti kreiramo ingredientList varijablu
 
+
+497. 
+-pocetak rada sa custom hooks
+-kreiramo hooks folder
+-u hooks folderu kreiramo http.jsx komponentu
+-u http.jsx komponenti kreiramo sendRequest funkciju sa parametrim url, method, body
+-u Ingredients.jsx komponentu importujemo useHttp funkciju
+
+
+498. 
+-dijeljenje podataka izmedu custom hooks i komponenti
+-u Ingredients.jsx komponenti, funkciji addIngredientHandler dodajemo sendRequest funkciju
+-u Ingredients.jsx komponenti, unutar useEffect() React hook dodajemo if else uslov
+
+
+499. 
+-koristenje custom React hook
+-u http.jsx komponenti kreiramo varijabli initialState
+-kreiramo clear funkciju
+-u Ingredients.jsx komponenti, u ErrorModal komponenti dodajemo clear funkciju
+-u Search.jsx komponentu importujemo http.jsx komponentu
+-kreiramo jos jedan useEffect unutar kojeg se nalazi if uslov
+-importujemo ErrorModal komponentu
+-u return izjavi dodajemo uslov za pojavljivanje error poruke
+
+
+500. 
+-sazetak

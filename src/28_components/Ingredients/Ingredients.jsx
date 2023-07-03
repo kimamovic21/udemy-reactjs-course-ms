@@ -1,9 +1,10 @@
-import React, { useCallback, useEffect, useState, useReducer, useMemo } from 'react';
+import React, { useCallback, useEffect, useReducer, useMemo, } from 'react';
 import './Ingredients.css';
 import IngredientForm from './IngredientForm';
 import IngredientList from './IngredientList';
 import Search from './Search';
 import ErrorModal from '../UI/ErrorModal';
+import useHttp from '../hooks/http';
 
 const ingredientReducer = (currentIngredients, action) => {
   switch(action.type) {
@@ -18,85 +19,47 @@ const ingredientReducer = (currentIngredients, action) => {
   };
 };
 
-const httpReducer = (currentHttpState, action) => {
-  switch (action.type) {
-    case 'SEND':
-      return { loading: true, error: null };
-    case 'RESPONSE':
-      // return { loading: false, error: null};
-      return { ...currentHttpState, loading: false };
-    case 'ERROR':
-      return { loading: false, error: action.errorMessage };
-    case 'CLEAR':
-      return { ...currentHttpState, error: null };
-    default:
-        throw new Error('Should not get there !!!');
-  };
-};
-
 const Ingredients = () => {
   const [userIngredients, dispatch] = useReducer(ingredientReducer, []);
-  const [httpState, dispatchHttp] = useReducer(httpReducer, {loading: false, error: null});
-  // const [ userIngredients, setUserIngredients] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState();
+  const { 
+      isLoading, 
+      error, 
+      data, 
+      sendRequest, 
+      reqExtra, 
+      reqIdentifer,
+      clear
+  } = useHttp();
 
   useEffect(() => {
-    console.log('Rendering Ingredients', userIngredients);
-  }, [userIngredients]);
+    if (!isLoading && !error && reqIdentifer === 'REMOVE_INGREDIENT') {
+      dispatch({type: 'DELETE', id: reqExtra})
+    }
+    else if (!isLoading && !error && reqIdentifer === 'ADD_INGREDIENT') {
+      dispatch({
+        type: 'ADD',
+        ingredient: { id: data.name, ...reqExtra}
+      })
+    };
+  }, [data, reqExtra, reqIdentifer, isLoading, error]);
 
   const filteredIngredientsHandler = useCallback((filteredIngredients) => {
-    // setUserIngredients(filteredIngredients);
     dispatch({type: 'SET', ingredients: filteredIngredients});
   }, []);
 
   const addIngredientHandler = useCallback((ingredient) => {
-    // setIsLoading(true);
-    dispatchHttp({type: 'SEND'});
-    fetch(`https://udemy-react-28-ms-hooks-default-rtdb.firebaseio.com/ingredients.json`, {
-      method: 'POST',
-      body: JSON.stringify(ingredient),
-      headers: { 'Content-Type' : 'application/json' },
-    })
-      .then(response => {
-        // setIsLoading(false);
-        dispatchHttp({type: 'RESPONSE'});
-        return response.json();
-    })
-      .then(responseData => {
-        // setUserIngredients(prevIngredients => [
-        //   ...prevIngredients,
-        //   { id: responseData.name, ...ingredient }  // id + title + amount
-        // ])
-        dispatch({ type: 'ADD', ingredient: { id: responseData.name, ...ingredient }});
-    }); 
-  }, []);
+    sendRequest( `https://udemy-react-28-ms-hooks-default-rtdb.firebaseio.com/ingredients.json`, 'POST', JSON.stringify(ingredient), ingredient, 'ADD_INGREDIENT');
+  }, [sendRequest]);
 
   const removeIngredientHandler = useCallback((ingredientId) => {
-    // setIsLoading(true);
-    dispatchHttp({type: 'SEND'});
-    fetch(`https://udemy-react-28-ms-hooks-default-rtdb.firebaseio.com/ingredients/${ingredientId}.json`, {
-      method: 'DELETE',
-    })
-      .then(response => {
-        dispatchHttp({type: 'RESPONSE'});
-        // setIsLoading(false);
-        // setUserIngredients(prevIngredients => 
-        //     prevIngredients.filter((ingredient) => ingredient.id !== ingredientId)
-        // );
-        dispatch({type: 'DELETE', id: ingredientId});
-    })
-      .catch(error => {
-        // setError(error.message);  // error object has a message property
-        // setIsLoading(false);
-        dispatchHttp({type: 'ERROR', errorMessage: error.message});
-    });
-  }, []);
-
-  const clearError = useCallback(() => {
-    // setError(null);
-    dispatchHttp({type: 'CLEAR'});
-  }, []);
+    sendRequest(
+      `https://udemy-react-28-ms-hooks-default-rtdb.firebaseio.com/ingredients/${ingredientId}.json`, 
+      'DELETE',
+      null,
+      ingredientId,
+      'REMOVE_INGREDIENT'
+    );
+  }, [sendRequest]);
 
   const ingredientList = useMemo(() => {
     return (
@@ -109,23 +72,15 @@ const Ingredients = () => {
 
   return (
     <div className="App28">
-      {
-      httpState.error &&
-         (<ErrorModal onClose={clearError}>
-            {httpState.error}
-          </ErrorModal>)
-      }
+      {error && (<ErrorModal onClose={clear}>{error}</ErrorModal>)}
 
       <IngredientForm 
             onAddIngredient={addIngredientHandler}
-            // loading={isLoading}
-            loading={httpState.loading}
+            loading={isLoading}
       />
     
       <section>
-        <Search 
-            onLoadIngredients={filteredIngredientsHandler}
-        />
+        <Search onLoadIngredients={filteredIngredientsHandler} />
             {ingredientList}
       </section>
     </div>
