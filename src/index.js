@@ -28,8 +28,9 @@ import ReactDOM from 'react-dom/client';
 // import store from './19_components/store/index';
 // import App20a from './20_components/project1/App20a';
 // import App20b from './20_components/project2/App20b';
-import App28 from './28_components/App28';
-import AuthContextProvier from './28_components/context/auth-context';
+import App21 from './21_components/App21';
+// import App28 from './28_components/App28';
+// import AuthContextProvier from './28_components/context/auth-context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -63,8 +64,9 @@ root.render(
         {/* </Provider> */}
         {/* <App20a /> */}
         {/* <App20b /> */}
-        <AuthContextProvier>
-          <App28 />
-        </AuthContextProvier>
+        <App21 />
+        {/* <AuthContextProvier> */}
+          {/* <App28 /> */}
+        {/* </AuthContextProvier> */}
   </React.StrictMode> 
 );
