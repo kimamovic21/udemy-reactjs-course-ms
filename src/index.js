@@ -28,7 +28,8 @@ import ReactDOM from 'react-dom/client';
 // import store from './19_components/store/index';
 // import App20a from './20_components/project1/App20a';
 // import App20b from './20_components/project2/App20b';
-import App21 from './21_components/App21';
+// import App21 from './21_components/App21';
+import App22 from './22_components/App22';
 // import App28 from './28_components/App28';
 // import AuthContextProvier from './28_components/context/auth-context';
 
@@ -64,7 +65,8 @@ root.render(
         {/* </Provider> */}
         {/* <App20a /> */}
         {/* <App20b /> */}
-        <App21 />
+        {/* <App21 /> */}
+        <App22 />
         {/* <AuthContextProvier> */}
           {/* <App28 /> */}
         {/* </AuthContextProvier> */}
