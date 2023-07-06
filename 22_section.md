@@ -26,6 +26,7 @@ Deploying React Apps
 
 364. 
 -primjer razvijanja
+-npm run build
 -kreiranje projekta na Firebase
 -odaberemo opciju build - hosting
 -u terminal ukucamo npm install -g firebase-tools
