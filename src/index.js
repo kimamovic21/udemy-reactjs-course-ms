@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 
 
 // import App01 from './01_components/App01';
-import App02 from './02_components/App02';
+// import App02 from './02_components/App02';
 // import App03 from './03_components/App03';
 // import App03b from './03b_components/App03b';
 // import App04 from './04_components/App04';
@@ -31,16 +31,16 @@ import App02 from './02_components/App02';
 // import App20b from './20_components/project2/App20b';
 // import App21 from './21_components/App21';
 // import App22 from './22_components/App22';
-// import App23 from './23_components/App23';
-// import App28 from './28_components/App28';
-// import AuthContextProvier from './28_components/context/auth-context';
+// import App24 from './24_components/App24';
+import App29 from './29_components/App29';
+import AuthContextProvier from './29_components/context/auth-context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
         {/* <App01 /> */}
-        <App02 />
+        {/* <App02 /> */}
         {/* <App03 /> */}
         {/* <App03b /> */}
         {/* <App04 /> */}
@@ -70,9 +70,9 @@ root.render(
         {/* <App20b /> */}
         {/* <App21 /> */}
         {/* <App22 /> */}
-        {/* <App23 /> */}
-        {/* <AuthContextProvier> */}
-          {/* <App28 /> */}
-        {/* </AuthContextProvier> */}
+        {/* <App24 /> */}
+        <AuthContextProvier>
+          <App29 />
+        </AuthContextProvier>
   </React.StrictMode> 
 );

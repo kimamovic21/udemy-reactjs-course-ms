@@ -1,10 +1,10 @@
 import React,{useContext} from 'react';
-import './App28.css';
+import './App29.css';
 import Ingredients from './Ingredients/Ingredients';
 import Auth from './Auth';
 import { AuthContext } from './context/auth-context';
 
-const App28 = (props) => {
+const App29 = (props) => {
   const authContext = useContext(AuthContext);
 
   let content = <Auth />;
@@ -15,4 +15,4 @@ const App28 = (props) => {
   return content;
 };
 
-export default App28;
+export default App29;
