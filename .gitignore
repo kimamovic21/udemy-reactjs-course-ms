@@ -2,9 +2,8 @@
 
 # dependencies
 /backend-api/node_modules
-/backend-api/package-lock.json
 /backend-api-auth/node_modules
-/backend-api-auth/package-lock.json
+/backend-query/node_modules
 /node_modules
 /.pnp
 .pnp.js
