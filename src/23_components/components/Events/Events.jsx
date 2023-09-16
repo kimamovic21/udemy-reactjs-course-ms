@@ -1,0 +1,26 @@
+import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import Header from '../Header.jsx';
+import EventsIntroSection from './EventsIntroSection.jsx';
+import FindEventSection from './FindEventSection.jsx';
+import NewEventsSection from './NewEventsSection.jsx';
+
+const Events = () => {
+    return (
+        <>
+            <Outlet />
+            <Header>
+                <Link to="/events/new" className="button">
+                New Event
+                </Link>
+            </Header>
+            <main>
+                <EventsIntroSection />
+                <NewEventsSection />
+                <FindEventSection />
+            </main>
+        </>
+    );
+};
+
+export default Events;

@@ -31,14 +31,15 @@ import ReactDOM from 'react-dom/client';
 // import App20b from './20_components/project2/App20b';
 // import App21 from './21_components/App21';
 // import App22 from './22_components/App22';
+import App23 from './23_components/App23';
 // import App24 from './24_components/App24';
-import App29 from './29_components/App29';
-import AuthContextProvier from './29_components/context/auth-context';
+// import App29 from './29_components/App29';
+// import AuthContextProvier from './29_components/context/auth-context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <>
         {/* <App01 /> */}
         {/* <App02 /> */}
         {/* <App03 /> */}
@@ -70,9 +71,10 @@ root.render(
         {/* <App20b /> */}
         {/* <App21 /> */}
         {/* <App22 /> */}
+        <App23 />
         {/* <App24 /> */}
-        <AuthContextProvier>
-          <App29 />
-        </AuthContextProvier>
-  </React.StrictMode> 
+        {/* <AuthContextProvier> */}
+          {/* <App29 /> */}
+        {/* </AuthContextProvier> */}
+   </>
 );
