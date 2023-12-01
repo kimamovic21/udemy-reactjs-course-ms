@@ -1,3 +1,11 @@
+# "React - The Complete Guide" Udemy Course
+## Maximilian Schwarzmüller 
+
+### Link: https://github.com/academind/react-complete-guide-code
+
+### Link: https://github.com/academind/react-complete-guide-course-resources
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
