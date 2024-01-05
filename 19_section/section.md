@@ -1,5 +1,4 @@
-React - The Complete Guide  (18_section)
-Diving into Redux (An Alternative To The Context API)
+Section 19: Diving into Redux (An Alternative To The Context API)
 
 402. Module Introduction
 
