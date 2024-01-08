@@ -1,11 +1,7 @@
 const express = require('express');
 
 const { getAll, get, add, replace, remove } = require('../data/event');
-const {
-  isValidText,
-  isValidDate,
-  isValidImageUrl,
-} = require('../util/validation');
+const { isValidText, isValidDate, isValidImageUrl } = require('../util/validation');
 
 const router = express.Router();
 
