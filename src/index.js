@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import { Provider } from 'react-redux';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 // import App01 from './01_components/App01';
 // import App02 from './02_components/App02';
@@ -33,7 +33,8 @@ import registerServiceWorker from './registerServiceWorker';
 // import App22 from './22_components/App22';
 // import App23 from './23_components/App23';
 // import App24 from './24_components/App24';
-import App25 from './25_components/App25';
+// import App25 from './25_components/App25';
+import App26 from './26_components/App26';
 // import App29 from './29_components/App29';
 // import AuthContextProvier from './29_components/context/auth-context';
 
@@ -74,10 +75,11 @@ root.render(
         {/* <App22 /> */}
         {/* <App23 /> */}
         {/* <App24 /> */}
-        <App25 />
+        {/* <App25 /> */}
+        <App26 />
         {/* <AuthContextProvier> */}
           {/* <App29 /> */}
         {/* </AuthContextProvier> */}
    </>
 );
-registerServiceWorker();
+// registerServiceWorker();
