@@ -1,0 +1,156 @@
+Section 30: React + TypeScript
+
+01. Module Introduction
+
+02. What & Why ?
+
+03. Installing & Using TypeScript
+-otvorimo web stranicu https://www.typescriptlang.org/
+-kreiramo basics.ts fajl
+
+04. Exploring the Base Types
+
+05. Working with Array & Object Types
+
+06. Understanding Type Inference
+
+07. Using Union Types
+
+08. Understanding Type Aliases
+
+09. Functions & Function Types
+
+10. Diving into Generics
+
+11. A Close Look At Generics
+
+12. Creating a React + TypeScript Project
+-instaliranje React + Typescript projekta u terminalu
+-u terminal ukucamo komandu npm create vite@latest .
+
+13. Working with Components & TypeScript
+-u folderu src kreiramo komponentu components
+-u folderu components kreiramo komponentu Todos.tsx
+-u komponenti Todos.tsx kreiramo ul element
+-u ul elementu kreiramo li elemente
+-u komponentu App.tsx importujemo komponentu Todos.tsx
+
+14. Working with Props & TypeScript
+-u komponenti Todos.tsx, funkciji Todos dodajemo parametar props
+-parametru props dodajemo object type
+-varijabli Todos dodajemo type React.FC
+-u type React.FC dodajemo type objekt
+-u ul element dodajemo varijablu props
+-varijabli props dodajemo varijablu items
+-u komponenti App.tsx, komponenti Todos dodajemo prop items
+
+15. Adding a Data Model
+-u folderu src kreiramo folder models
+-u folderu models kreiramo todo.ts fajl
+-u todo.ts fajlu kreiramo klasu Todo
+-u klasi Todo kreiramo property id i text
+-u klasu Todo dodajemo funkciju constructor
+-u komponenti App.tsx kreiramo varijablu niz const todos
+-importujemo klasu Todo
+-u niz todos dodajemo dvije klase new Todo('...')
+-u komponentu Todos.tsx importujemo klasu Todo
+-u property items dodajemo Todo[]
+-u return izjavi, li elementu dodajemo prop key
+-u li element dodajemo item.text
+-u komandu App.tsx, u return izjavi u prop items proslijedujemo varijablu todos
+
+16. Time to Practice: Exercise Time!
+-u folderu components kreiramo TodoItem.tsx komponentu
+-u komponenti TodoItem.tsx, funkciji TodoItem dodajemo parametar props
+-u return izjavi kreiramo li element
+-u li element dodajemo props.text
+-funkciji TodoItem dodajemo type React.FC
+-dodajemo objekt text: string
+-u komponentu Todos.tsx importujemo komponentu TodoItem
+-u ul element dodajemo komponentu TodoItem
+-komponenti TodoItem dodajemo prop key i text
+
+17. Form Submissions in TypeScript Projects
+-u folderu components kreiramo komponentu NewTodo.tsx
+-u return izjavi kreiramo form element
+-u form elementu kreiramo elemente label, input i button
+-elementu label dodajemo prop htmlFor
+-kreiramo funkciju submitHandler sa parametrom event
+-parametru event dodajemo type React.FormEvent
+-elementu form dodajemo dogadaj onSubmit
+-u dogadaj onSubmit proslijedujemo Functions submitHandler
+
+18. Working with refs & useRef
+-u komponentu NewTodo.tsx importujemo funkciju useRef
+-kreiramo funkciju useRef()
+-vrijednost funkcije useRef() pohranjujemo u varijablu const todoTextInputRef
+-u return izjavi input elementu dodajemo prop ref
+-u prop ref proslijedujemo varijablu todoTextInputRef
+-funkciji useRef() dodajemo type HTMLInputElement
+-u funkciji submitHandler() kreiramo varijablu const enteredText
+-dodajemo uslov if
+
+19. Working with "Function Props"
+-u komponentu App.tsx importujemo komponentu NewTodo
+-u komponenti NewTodo.tsx, funkciji NewTodo dodajemo parametar props
+-u funkciju submitHandler() dodajemo varijablu props.onAddTodo(enteredText)
+-funkciji NewTodo dodajemo type React.FC
+-u komponenti App.tsx, u return izjavi komponenti NewTodo dodajemo prop onAddTodo
+-kreiramo funkcije addTodoHandler() sa parametrom todoText
+-parametru todoText dodajemo type string
+-u prop onAddTodo proslijedujemo funkcije addTodoHandler
+
+20. Managing State & TypeScript
+-u komponentu App.tsx importujemo React Hook useState
+-kreiramo state varijablu const [todos, setTodos] = useState()
+-importujemo klasu Todo.ts
+-funkciji useState() dodajemo type klasu Todo
+-u funkciji addTodoHandler() kreiramo varijablu newTodo
+-dodajemo funkciju setTodos()
+-u funkciji setTodos(), kreiramo anonimnu funkciju sa parametrom prevTodos
+-u return izjavu dodajemo prevTodos.concat(newTodo)
+
+21. Adding Styling
+-u folderu components kreiramo fojlove css module 
+-u tsx importujemo objekt classes
+-HTML elementima dodajemo prop className
+
+22. Time to Practice: Removing a Todo
+-u komponenti TodoItem.tsx, li elementu dodajemo dogadaj onClick
+-u dogadaj onClick proslijedujemo funkciju props.onRemoveTodo
+-u type React.FC dodajemo onRemoveTodo
+-u komponenti Todos.tsx, u return izjavi komponenti TodoItem dodajemo prop onRemoveTodo
+-u type React.FC dodajemo onRemoveTodo
+-u prop onRemoveTodo proslijedujemo funkciju props.onRemoveTodo
+-u komponenti App.tsx, u return izjavi komponenti Todos dodajemo prop onRemoveTodo
+-kreiramo funkciju removeTodoHandler() sa parametrom todoId
+-parametru todoId dodajemo type string
+-u prop onRemoveTodo proslijedujemo funkciju removeTodoHandler
+-u funkciju removeTodoHandler() dodajemo funkciju setTodos()
+-u funkciju setTodos() proslijedujemo anonimnu funkciju sa parametrom prevTodos
+-umjesto metode .bind() mozemo dodati onRemoveTodo={() => props.onRemoveTodo(item.id)}
+
+23. The Context API & TypeScript
+-u folderu src kreiramo folder store
+-u folderu store kreiramo komponentu todos-context.tsx
+-u komponenti todos-context.tsx kreiramo funkciju createContext()
+-u funkciji createContext() kreiramo konfiguracioni objekt { ... }
+-vrijednost funkcije createContext() pohranjujemo u varijablu const TodosContext
+-funkciji createContext() dodajemo type u <>
+-importujemo komponentu Todo.tsx
+-kreiramo funkciju TodosContextProvider() sa parametrom props
+-funkciji TodosContextProvider() dodajemo type React.FC
+-u return izjavu u komponentu TodosContext.Provider dodajemo props.chidlren
+-importujemo kod iz komponente App.tsx
+-kreiramo varijablu objekt const contextValue
+-u return izjavi komponenti TodosContext.Provider dodajemo prop value
+-u prop value proslijedujemo varijablu contextValue
+-kreiramo type TodosxContextObj
+-u komponentu Todos.tsx importujemo React Hook useContext
+-importujemo komponentu TodosContext
+-u ul element, dodajemo varijablu todosCtx
+-varijabli todosCtx dodajemo metodu .map()
+
+24. Summary
+
+25. Bonus: Exploring tsconfig.json file
