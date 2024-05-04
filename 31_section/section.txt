@@ -1,0 +1,201 @@
+Section 31: Optional React Summary & Core Feature Walkthrough
+
+01. Module Introduction
+
+02. What is React & Why you should use it ?
+
+03. React Projects - Requirements
+
+04. Creating React Projects
+
+05. Our Starting Project
+
+06. Understanding How React Works
+
+07. Building a First Custom Component
+-u folderu src kreiramo folder components
+-u folderu components kreiramo komponentu Post.jsx
+
+08. Outputting Dynamic Values
+-u komponenti Post.jsx kreiramo varijablu cosnt chosenName
+
+09. Reusing Components
+-u komponenti App.jsx kreiramo vise komponenti Main
+
+10. Passing Data to Components with Props
+-u komponenti App.jsx, komponentama Post dodajemo props 
+-u komponenti Post.jsx, funkciji Post dodajemo parametar props
+
+11. CSS Styling & CSS Modules
+-kreiramo css module fajlove
+-u kreirane komponente importujemo css module fajlove
+
+12. Exercise & Another Component
+-kreiramo komponentu PostsList.jsx
+-u komponentu PostsList.jsx importujemo komponentu Post.jsx
+
+13. Preparing the App For State Management
+
+14. Adding Event Listeners
+-u komponenti NewPost.jsx kreiramo funkciju changeBodyHandler()
+-elementu textarea dodajemo dogadaj onChange
+-u dogadaj onChange proslijedujemo funkciju changeBodyHandler
+
+15. Working with State
+-u komponenti NewPost.jsx kreiramo varijablu let enteredBody
+-importujemo funkciju React Hook useState
+-kreiramo state varijablu enteredBody i set funkciju setEnteredBody
+-u funkciju changeBodyHandler() dodajemo funkciju setEnteredBody()
+
+16. Lifting State Up
+-u komponenti NewPost.jsx, funkciji NewPost() dodajemo parametar props
+-elementu textarea dodajemo dogadaj onChange
+-u dogadaj onChange proslijedujemo props.onBodyChange
+-u komponenti PostsList.jsx, komponenti NewPost dodajemo prop onBodyChange
+-u prop onBodyChange proslijedujemo funkciju bodyChangeHandler
+-kreiramo state varijablu enteredAuthor i set funkciju setEnteredAuthor
+-kreiramo funkciju authorChangeHanlder()
+-u funkciju authorChangeHanlder() dodajemo funkciju setEnteredAuthor()
+-komponenti NewPost dodajemo prop onAuthorChange
+-u prop onAuthorChange proslijedujemo funkciju authorChangeHanlder
+
+17. The Special "children" Prop
+-kreiramo komponentu Modal.jsx
+-funkciji Modal dodajemo parameter { children }
+-u komponentu PostsList.jsx importujemo komponentu Modal.jsx
+-u return izjavi, u element dialog dodajemo varijablu children
+-dialog elementu dodajemo prop open
+
+18. State & Conditional Content
+-u komponenti PostsList.jsx kreiramo state varijablu modalIsVisible i set funkciju setModalIsVisible
+-u komponenti Modal.jsx kreiramo funkciju hideModalHandler()
+-u funkciju hideModalHandler() dodajemo funkciju setModalIsVisible()
+-komponenti PostsList.jsx, u return izjavi komponenti Modal dodajemo prop onClose
+-u prop onClose proslijedujemo funkciju hideModalHandler
+-u komponenti Modal.jsx, funkciji Modal() dodajemo parametre destruktuirane props children i onClose
+-u komponenti PostsList.jsx u return izjavi dodajemo ternarni uslov modalIsVisible
+-kreiramo varijablu let modalContent
+-dodajemo uslov if (modalIsVisible)
+-u return izjavu dodajemo varijablu modalContent
+
+19. Adding a Shared Header & More State Management
+-kreiramo komponentu MainHeader.jsx
+-u terminalu instaliramo paket React Icons
+-u komponenti PostsList.jsx, funkciji PostsList() dodajemo parametre destruktuirane prop isPosting i onStopPosting
+-u komponentu App.jsx premjestamo varijablu modalIsVisible i funkciju setModalIsVisible
+-kreiramo funkcije showModalHandler() i hideModalHandler()
+-komponenti MainHeader dodajemo prop onCreatePost
+-u prop onCreatePost proslijedujemo funkciju showModalHandler
+-komponenti PostsList dodajemo prop isPosting
+-u prop isPosting proslijedujemo varijablu modalIsVisible
+-dodajemo prop onStopPosting u koji proslijedujemo funkciju hideModalHandler
+
+20. Adding Form Buttons
+-u komponenti NewPost.jsx kreiramo button elemente
+-funkciji NewPost() dodajemo parametre destruktuirane prop onBodyChange, onAuthorChange, onCancel
+-button elementu dodajemo dogadaj onClick
+-u dogadaj onClick proslijedujemo prop onClick
+-u komponenti PostsList.jsx, komponenti NewPost dodajemo prop onCancel
+-u prop onCancel proslijedujemo prop onStopPosting
+
+21. Handling Form Submission
+-u komponenti NewPost.jsx, elementu form dodajemo dogadaj onSubmit
+-u textarea element, u dogadaj onChange proslijedujemo funkciju bodyChangeHandler
+-u input element, u dodajemo onChange proslijedujemo funkciju authorChangeHanlder
+-kreiramo funkciju submitHandler()
+-u dogadaj onSubmit proslijedujemo funkciju submitHandler
+-u funkciji submitHandler() kreiramo varijablu const postData
+-dodajemo funkciju onCancel()
+
+22. Updating State Based on Previous State
+-u komponenti PostsList.jsx kreiramo state varijablu posts i set funkciju setPosts
+-kreiramo funkciju addPostHandler() sa parametrom postData
+-u funkciju addPostHandler() dodajemo funkciju setPosts()
+-u komponentu NewPost dodajemo prop onAddPost
+-u prop onAddPost proslijedujemo funkciju addPostHandler
+-u komponenti NewPost.jsx, u funkciju submitHandler() dodajemo funkciju onAddPost(postData)
+
+23. Outputting List Data
+-u komponenti PostsList.jsx, u return izjavu dodajemo metodu posts.map()
+-dodajemo usloe posts.length > 0 i posts.length === 0
+
+24. Adding a Backend to the React SPA
+-kreiramo folder server
+-u folderu server kreiramo app.js fajl
+-u app.js fajlu kreiramo node.js - express aplikaciju
+
+25. Sending a POST HTTP Request
+-u komponenti PostsList.jsx, u funkciju addPostHandler() dodajemo funkciju fetch()
+
+26. Handling Side Effects with useEffect()
+-u komponentu PostsList.jsx importujemo funkciju React Hook useEffect()
+-kreiramo asinhronu funkciju fetchPosts()
+-u funkciju useEffect() dodajemo funkciju fetchPosts()
+
+27. Handle Loading State
+-u komponenti PostsList.jsx kreiramo state varijablu const isFetching i set funkciju setIsFetching()
+-u funkciju fetchPosts() dodajemo funkciju setIsFetching()
+-u return izjavu dodajemo uslov {isFetching && (...)}
+
+28. Understanding & Adding Routing
+-u terminalu instaliramo paket React Router Dom sa komandom npm i react-router-dom
+
+29. Adding Routes
+-u komponentu main.jsx importujemo komponente RouterProvider i funkciju createBrowserRouter
+-kreiramo funkciju createBrowserRouter()
+-u funkciji createBrowserRouter() kreiramo niz i unutar niza rute kao objekt
+-vrijednost funkcije createBrowserRouter() pohranjujemo u varijablu const router
+-u return izjavi komponenti RouterProvider dodajemo prop router
+-u prop router proslijedujemo varijablu router
+
+30. Working with Layout Routes
+-kreiramo folder routes
+-u folderu routes kreiramo komponentu RootLayout.jsx
+-u komponentu RootLayout.jsx importujemo komponentu MainHeader.jsx
+-u komponentu main.jsx importujemo komponentu RootLayout.jsx
+-u rutu '/', dodajemo niz children
+-u komponentu RootLayout.jsx importujemo komponentu Outlet iz paket React Router Dom
+
+31. Refactoring Route Components & More Nesting
+-preimenujemo komponentu App.jsx u Posts.jsx
+-premjestamo komponente u folder routes
+-u komponentu NewPost.jsx importujemo komponentu Modal.jsx
+
+32. Linking & Navigating
+-u komponentu MainHeader.jsx importujemo komponentu Link iz pakete React Router Dom
+-u return izjavu dodajemo komponentu Link
+-u komponentu Modal.jsx importujemo funkciju useNavigate iz paketa React Router Dom
+-kreiramo funkciju useNavigate()
+-vrijednost funkcije useNavigate() pohranjujemo u varijablu const navigate
+-kreiramo funkciju closeHandler()
+-u funkciju closeHandler() dodajemo funkciju navigate()
+
+33. Data Fetching via loader()s
+-u komponenti Posts.jsx kreiramo i eksportujemo funkciju loader()
+-u komponentu main.jsx importujemo funkciju loader
+-u objekt rutu '/' dodajemo property loader
+-u funkciju loader dodajemo varijable response i resData
+-u komponentu PostsList.jsx importujemo funkciju useLoaderData iz paketa React Router Dom
+-u funkciji PostsList() kreiramo funkciju useLoaderData()
+-vrijednost funkcije useLoaderData() pohranjujemo u varijablu const posts
+
+34. Submitting Data with action()s
+-u komponenti NewPost.jsx kreiramo i eksportujemo funkciju action()
+-importujemo komponentu Form iz paketa React Router Dom
+-u komponentu main.jsx importujemo funkciju action
+-u objekt za rutu '/create-post dodajemo prop action
+-u komponenti NewPost.jsx, u funkciji action() kreiramo varijablu const formData
+-kreiramo varijablu const postData
+-importujemo funkciju redirect iz paketa React Router Dom
+
+35. Dynamic Routes
+-u komponenti main.jsx kreiramo objekt za rutu '/:id'
+-u folderu routes kreiramo komponentu PostDetails.jsx
+-kreiramo i eksportujemo funkciju loader
+-u komponentu main.jsx importujemo komponentu PostDetails.jsx
+-u prop element dodajemo komponentu PostDetails.jsx
+-u prop loader dodajemo funkciju loader
+
+36. Module Summary
+
+37. Module Resources
