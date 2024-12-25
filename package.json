@@ -18,6 +18,7 @@
     "react-transition-group": "^4.4.5",
     "redux": "^4.2.1",
     "styled-components": "^6.0.0-rc.1",
+    "udemy-reactjs-course-ms": "file:",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
