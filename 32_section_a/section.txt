@@ -1,0 +1,55 @@
+Section 32: Handling Forms via Form Actions
+
+01. Module Introduction
+
+02. What are Form Actions ?
+-otvorimo link: https://react.dev/reference/react/useActionState
+-potrebno instalirati React verziju 19
+-preuzmemo starter folder
+-u komponenti Signup.jsx kreiramo funkciju signupAction()
+-funkciji signupAction() dodajemo parametar formData
+-input elementima dodajemo atribut name
+
+03. Adding Validation Checks
+-u komponenti Signup.jsx, u funkciji signupAction() kreiramo varijable const email, const password, const confirmPassword, const firstName, const lastName, const role, const terms i const acquisitionChannel
+-kreiramo varijablu niz let errors
+-u komponentu Signup.jsx importujemo funkcije iz validation.js fajla
+-dodajemo uslov if (!isEmail(email))
+-u uslov if dodajemo funkciju errors.push()
+-dodajemo uslov if (!isNotEmpty(password) || !hasMinLength(password, 6))
+-u uslov if dodajemo funkciju errors.push()
+-dodajemo uslov if(isEqualToOtherValue(password, confirmPassword))
+-u uslov if dodajemo funkciju errors.push()
+-dodajemo uslov if (!isNotEmpty(firstName) || !isNotEmpty(lastName))
+-u uslov if dodajemo funkciju errors.push()
+-dodajemo uslov if(!isNotEmpty(role))
+-u uslov if dodajemo funkciju errors.push()
+-dodajemo uslov if (!terms)
+-u uslov if dodajemo funkciju errors.push()
+-dodajemo uslov if (acquisitionChannel.length === 0)
+-u uslov if dodajemo funkciju errors.push()
+
+04. Managing Form-dependant State with useActionState()
+-dodajemo uslov if (errors.length > 0)
+-u uslov if dodajemo izjavu objekt return errors
+-nakon uslova if dodajemo izjavu objekt return 
+-importujemo funkciju useActionState iz paketa React
+-nakon funkcije signupAction() pozivamo funkciju useActionState()
+-funkciji useActionState() dodajemo dva argumenta
+-prvi argument je funkcija signupAction
+-drugi argument je objekt
+-vrijednost funkcije useActionState() pohranjujemo u varijable const [formState, formAction, pending]
+-u jsx-u, form elementu dodajemo prop action
+-u prop action proslijedujemo funkciju formAction
+-u jsx-u dodajemo uslov za kondicionalno renderovanje formState.errors
+-funkciji signupAction() dodajemo parametar prevFormState
+
+05. Using User Input
+-u uslov if (errors.length > 0) dodajemo u izjavu return objekt enteredValues
+-u jsx-u input elementima  dodajemo prop defaultValue
+-u prop defaultValue proslijedujemo vrijednost formState.enteredValues?
+-select elementu dodajemo prop defaultValue
+-input elementima za polje acquisition dodajemo prop defaultChecked
+-input elementu za checkbox dodajemo prop defaultChecked
+
+06. Moving the Action Function out of the Component
