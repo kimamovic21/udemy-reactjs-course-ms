@@ -1,0 +1,93 @@
+Section 32: Handling Forms via Form Actions
+
+07. A Demo App: Introduction
+-preuzmemo folder backend
+
+08. Handling Form Submission
+-u komponenti NewOpinion.jsx kreiramo funkciju shareOpinionAction() sa parametrom formData
+-u jsx-u form elementu dodajemo prop action u koji proslijedujemo funkciju shareOpinionAction
+-u funkciji shareOpinionAction() kreiramo varijable const title, const body i const userName
+-kreiramo varijablu let errors
+-dodajemo uslov if (title.trim().length < 5)
+-u uslov if dodajemo funkciju errors.push()
+-dodajemo uslov sa kojim provjeravamo da li je duzina karaktera manja od 10 i veca od 300
+-u uslov if dodajemo funkciju errors.push()
+-dodajemo uslvo if (!userName.trim())
+-u uslov if dodajemo funkciju errors.push()
+-dodajemo uslov if (errors.length > 0)
+-u uslov if dodajemo izjavu objekt return
+-u objekt dodajemo kljuceve errors i enteredValues
+-dodajemo izjavu return objekt
+-importujemo i pozivamo funkciju useActionState() iz paketa React
+-prvi argument funkcije useActionState() je funkcija shareOpinionAction, dok je drugi argument objekt
+-vrijednost funkcije useActionState() pohranjujemo u varijable const [formState, formAction]
+-u jsx-u, u prop action proslijedujemo funkciju formAction
+-funkciji shareOpinionAction() dodajemo parametar prevState
+-u jsx-u dodajemo uslov za kondicionalno renderovanje formState.errors
+-elementima input i textarea dodajemo prop defaultValue
+
+09. Working with Async Form Actions
+-importujemo i pozivamo funkciju use() iz paketa React
+-importujemo varijablu OpinionsContext iz opinions-context.js fajla
+-u funkciju use() dodajemo argument OpinionsContext
+-vrijednost funkcije use() pohranjujemo u destruktuiranu varijablu const { addOpinion }
+-u funkciji shareOpinionAction() pozivamo funkciju addOpinion()
+-funkciji addOpinion() dodajemo argument objekt
+-funkciji shareOpinionAction() dodajemo asinhronost
+-funkciji addOpinion() dodajemo await
+
+10. Updating the UI with useFormStatus()
+-otvorimo link: https://react.dev/reference/react-dom/hooks/useFormStatus
+-kreiramo komponentu Submit.jsx
+-u komponentu Submit.jsx importujemo i pozivamo funkciju useFormStatus iz paketa React Dom
+-u jsx-u kreiramo roditelj p element
+-u p elementu kreiramo button elementu sa prop type
+-vrijednost funkcije useFormStatus() pohranjujemo u destruktuiranu varijablu const { pending }
+-button elementu dodajemo prop disabled
+-u prop disabled proslijedujemo varijablu pending
+-u button elementu dodajemo uslov ternarni operator pending ?
+-u komponentu NewOpinion.jsx importujemo komponentu Submit.jsx
+-u form element dodajemo komponentu Submit
+
+11. Registering Multiple Form Actions
+-u komponenti Opinion.jsx, u jsx-u button elementima dodajemo prop formAction 
+-kreiramo funkcije upvoteAction() i downvoteAction()
+-u button element za upvote proslijedujemo funkciju upvoteAction
+-u button element za downvote proslijedujemo funkciju downvoteAction
+
+12. Sending an HTTP Request via a Form Action
+-u komponenti opinios-context.jsx, u funkciji upvoteAction() pozivamo funkciju await fetch()
+-vrijednost funkcije await fetch() pohranjujemo u varijablu const response
+-dodajemo uslov if (!response.ok)
+-ponovimo isiti postupak za funkciju downvoteAction()
+-u komponentu Opinion.jsx importujemo funkciju use iz paketa React
+-importujemo komponentu OpinionsContext iz komponente opinions-context.jsx
+-u funkciji Opinion() pozivamo funkciju use(OpinionsContext)
+-vrijednost funkcije use(OpinionsContext) pohranjujemo u destruktuirane varijable const { upvoteOpinion, downvoteOpinion }
+-u funkciji upvoteAction() pozivamo funkciju upvoteOpinion()
+-u funkciji downvoteAction() pozivamo funkciju downvoteOpinion()
+-funkcijama upvoteAction() i downvoteAction() dodajemo asinhronost
+-funkcijama upvoteOpinion() i downvoteOpinion() dodajemo await
+-funkcijama upvoteOpinion() i downvoteOpinion() proslijedujemo argument id
+
+13. Using the "pending" State from useActionState()
+-u komponentu Opinion.jsx importujemo funkciju useActionState iz paketa React
+-u funkciji() Opinion() pozivamo funkciju useActionState() dva puta
+-vrijednost funkcije useActionState(upvoteAction) pohranjujemo u varijable const [upvoteFormState, upvoteFormAction, upvodePending]
+-vrijednost funkcije useActionState(downvoteAction) pohranjujemo u varijable const [downvoteFormState, downvoteFormAction, downvotePending]
+-button elementima dodajemo prop formAction
+-u prop formAction proslijedujemo funkcije upvoteFormAction i downvoteFormAction
+-button elementima dodajemo prop disabled
+
+14. Adding Optimistic Updating
+-otvorimo link: https://react.dev/reference/react/useOptimistic
+-u komponentu Opinion.jsx importujemo funkciju useOptimistic iz paketa React
+-u funkciji Opinion() pozivamo funkciju useOptimistic() 
+-funkciji useOptimistic() dodajemo argumente votes i anonimnu funkciju
+-anonimnoj funkciji dodajemo parametre prevVotes i mode
+-vrijednost funkcije useOptimistic() pohranjujemo u varijable const [optimisticVotes, setVotesOptimistically]
+-u funkciju upvoteAction() dodajemo funkciju setVotesOptimistically('up')
+-u funkciju downvoteAction() dodajemo funkciju setVotesOptimistically('down')
+-u jsx-u, u span elementu dinamicki prikazujemo varijablu optimisticVotes
+
+15. Module Summary
