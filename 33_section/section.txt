@@ -1,0 +1,66 @@
+Section 33: React Server Components (RSC) & Server Actions - A Closer Look
+
+01. Module Introduction
+
+02. Why We Need A Special Project Setup
+
+03. Understanding React Server Components
+
+04. Changing Server to Client Components
+-u komponentu ClientDemo.js dodajemo direktivu 'use client'
+-importujemo funkciju useState iz paketa React
+-kreiramo state varijablu const count i set funkciju setCount
+
+05. Combining RSC & Client Components
+-u komponentu RSCDemo.js importujemo komponentu ClientDemo.js
+-u komponentu ClientDemo.js importujemo komponentu RSCDemo.js
+-u jsx-u u div element dodajemo komponentu RSCDemo
+-izbrisemo komponentu RSCDemo i dodajemo prop children
+
+06. Fetching Data with RSCs
+-kreiramo komponentu DataFetchingDemo.js
+-u komponentu app/page.js importujemo komponentu DataFetchingDemo.js
+
+07. Submitting Data with Server Actions
+-kreiramo komponentu ServerActionsDemo.js
+-u komponentu app/page.js importujemo komponentu ServerActionsDemo.js
+-kreiramo folder actions i users.js fajl
+-u users.js fajlu kreiramo i eskportujemo asinhronu funkciju saveUserAction() 
+-funkciji saveUserAction() dodajemo parametar formData
+-u komponentu ServerActionsDemo.js importujemo funkciju saveUserAction iz users.js fajla
+-u jsx-u form elementu dodajemo prop action
+-u prop action proslijedujemo funkciju saveUserAction
+
+08. Using the use() Hook for Promises & Data Fetching
+-kreiramo komponentu UsePromisesDemo.js
+-u komponentu app/page.js importujemo komponentu UsePromisesDemo.js
+-funkciji Home() dodajemo asinhronost
+-importujemo modul fs
+-u jsx-u komponenti UsePromisesDemo dodajemo prop users
+-u funkciji Home() pozivamo funkciju await new Promise()
+-u komponenti UsePromisesDemo.jsx, funkciji UsePromisesDemo() dodajemo asinhronost
+-premjestamo funkciju await new Promise() i import za modul fs
+-u komponenti app/page.js komponenti UsePromisesDemo brisemo prop users
+-importujemo komponentu Suspense iz paketa React
+-u jsx-u dodajemo komponentu Suspense sa otvorenim i zatvorenim tagom
+-u komponentu Suspense dodajemo komponenti UsePromisesDemo
+-komponenti Suspense dodajemo prop fallback
+
+09. The use() Hook in Action
+-u komponentu UsePromisesDemo() dodajemo direktivu 'use client'
+-u komponenti app/page.js vrijednost funkcije new Promise() pohranjujemo u varijablu const fetchUsersPromise
+-u jsx-u, u prop usersPromise proslijedujemo varijablu fetchUsersPromise
+-importujemo i pozivamo funkciju use() iz paketa React
+-funkciji UsePromisesDemo() dodajemo parametar destruktuirani prop usersPromise
+-funkciji use() dodajemo argument usersPromise
+-vrijednost funkcije use(usersPromise) pohranjujemo u varijablu const users
+
+10. Handling Errors
+-kreiramo komponentu ErrorBoundary.js
+-u komponentu app/page.js importujemo komponentu ErrorBoundary.js
+-u jsx-u, u main element dodajemo komponentu ErrorBoundary sa otvorenim i zatvorenim tagom
+-komponenti ErrorBoundary dodajemo prop fallback 
+-u funkciji Promise(), anonimnoj funkciji dodajemo parametar reject
+-u funkciji setTimeout() pozivamo funkciju reject(new Error('Error'))
+
+11. Theory Wrap Up
