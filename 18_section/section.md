@@ -1,18 +1,18 @@
 Section 18: Practice Project: Building a Food Order App
 
-372. Module Introduction & Starting Project
+01. Module Introduction & Starting Project
 -preuzmemo pocetne fajlove i instaliramo Vite ReactJS project sa komandom npm i u terminalu
 -u terminalu projekt pokrenemo sa komandom npm run dev 
 -u terminalu udemo u backend folder sa komandom cd backend i instaliramo projekt sa komandom npm i
 -u terminalu pokrenemo backed sa komandom node app.js
 
-373. Planning the App & Adding a First Component
+02. Planning the App & Adding a First Component
 -kreiramo folder components
 -u folderu components kreiramo komponentu Header.jsx
 -u return izjavi kreiramo HTML elemente
 -importujemo sliku logoImg
 
-374. Fetching Meals Data (GET HTTP Request)
+03. Fetching Meals Data (GET HTTP Request)
 -kreiramo komponentu Meals.jsx
 -u komponenti Meals.jsx kreiramo ul element sa id-em meals
 -kreiramo asinhronu funkciju fetchMeals()
@@ -29,20 +29,20 @@ Section 18: Practice Project: Building a Food Order App
 -u useEffect() funkciju dodajemo funkciju fetchMeals()
 -u komponentu App.jsx importujemo komponentu Meals.jsx
 
-375. Adding a "MealItem" Component
+04. Adding a "MealItem" Component
 -kreiramo komponentu MealItem.jsx
 -funkciji MealItem dodajemo parametre destruktuirane prop
 -u komponentu Meals.jsx importujemo komponentu MealItem.jsx
 -u metodi loadedMeals.map(), komponenti MealItem dodajemo prop
 -u img element, atributu src dodajemo dinamicnu putanju sliku
 
-376. Formatting & Outputting Numbers as Currency
+05. Formatting & Outputting Numbers as Currency
 -kreiramo folder util
 -u folder util kreiramo formatting.js fajl
 -u formatting.js fajlu kreiramo i eskportujemo funkciju currencyFormatter()
 -u komponentu MealItem.jsx importujemo funkciju currencyFormatter
 
-377. Creating a Configurable & Flexible Custom Button Component
+06. Creating a Configurable & Flexible Custom Button Component
 -u folderu components kreiramo folder UI
 -u folderu UI kreiramo komponentu Button.jsx
 -u komponenti Button.jsx, funkciji Button dodajemo parametar destruktuirani prop children, textOnly, className, ...props
@@ -58,7 +58,7 @@ Section 18: Practice Project: Building a Food Order App
 -u komponentu MealItem.jsx importujemo komponentu Button.jsx
 -u return izjavu dodajemo komponentu Button
 
-378. Getting Started with Cart Context & Reducer
+07. Getting Started with Cart Context & Reducer
 -u folderu src kreiramo folder store
 -u folderu store kreiramo komponentu CartContext.jsx
 -u komponentu CartContext.jsx importujemo funkciju createContext
@@ -84,7 +84,7 @@ Section 18: Practice Project: Building a Food Order App
 -u uslov else dodajemo varijablu updatedItems i metodu .push()
 -u uslovu if za add item dodajemo return { ... }
 
-379. Finishing & Using the Cart Context & Reducer
+08. Finishing & Using the Cart Context & Reducer
 -u komponenti CartContext.jsx u uslovu if za remove item kreiramo varijablu const existingCartItemIndex
 -kreiramo varijablu existingCartItem
 -dodajemo uslov if (existingCartItem.quantity === 1)
@@ -116,7 +116,7 @@ Section 18: Practice Project: Building a Food Order App
 -kreiramo varijablu const totalCartItems
 -u return izjavi, u komponentu Button dodajemo varijablu totalCartItems
 
-380. Adding a Reusable Modal Component with useEffect
+09. Adding a Reusable Modal Component with useEffect
 -u folderu UI kreiramo komponentu Modal.jsx
 -funkciji Modal dodajemo parametre destruktuirani prop children, open, className = ''
 -u komponenti Modal kreiramo u return izjavi dialog roditelj element
@@ -140,7 +140,7 @@ Section 18: Practice Project: Building a Food Order App
 -dialog elementu dodajemo prop className
 -u prop className dodajemo dinamicnu klasu
 
-381. Opening the Cart in the Modal via a New Context
+10. Opening the Cart in the Modal via a New Context
 -kreiramo komponentu Cart.jsx
 -u komponentu Cart.jsx importujemo komponentu Modal.jsx
 -importujemo React Hook useContext
@@ -194,7 +194,7 @@ Section 18: Practice Project: Building a Food Order App
 -kreiramo varijablu const modal
 -u uslov if (open) dodajemo modal.showModal()
 
-382. Working on the Cart Items
+11. Working on the Cart Items
 -kreiramo komponentu CartItem.jsx
 -funkciji CartItem dodajemo parametre destruktuirane prop
 -u return izjavi kreiramo li element sa klasom cart-item
@@ -205,7 +205,7 @@ Section 18: Practice Project: Building a Food Order App
 -komponenti CartItem dodajemo prop
 -u prop onIcrease i onDecrease proslijedujemo anonimne funkcije
 
-383. Adding a Custom Input Component & Managing Modal Visibility
+12. Adding a Custom Input Component & Managing Modal Visibility
 -u komponenti Cart.jsx, u return izjavi, dodajemo uslov za pojavljivanje button elementa Go to Checkout
 -kreiramo komponentu Checkout.jsx
 -u komponentu Checkout.jsx importujemo komponentu Modal.jsx
@@ -257,7 +257,7 @@ Section 18: Practice Project: Building a Food Order App
 -u prop onClose proslijedujemo funkciju handleClose
 -u komponenti Cart.jsx, u prop onClose dodajemo dinamicno prikazivanje komponente Modal
 
-384. Handling Form Submission & Validation
+13. Handling Form Submission & Validation
 -u komponenti Checkout.jsx, u return izjavi form elementu dodajemo prop onSubmit
 -kreiramo funkciju handleSubmit()
 -u prop onSubmit proslijedujemo funkciju handleSubmit
@@ -266,13 +266,13 @@ Section 18: Practice Project: Building a Food Order App
 -kreiramo varijablu const formData
 -kreiramo varijablu const customerData
 
-385. Sending a POST Request with Order Data
+14. Sending a POST Request with Order Data
 -u komponenti Checkout.jsx, u funkciji handleSubmit() dodajemo funkciju fetch() sa dva argumenta
 -prvi argument funkcije fetch() je link, a drugi konfiguaracioni objekt 
 -u konfiguaracioni objekt dodajemo method, headers, body
 -kliknemo dugme Checkout da bi poslali podatke iz forme u backend
 
-386. Adding a Custom HTTP Hook & Avoiding Common Errors
+15. Adding a Custom HTTP Hook & Avoiding Common Errors
 -u folderu src kreiramo folder hooks
 -u folderu hooks kreiramo useHttp.js fajl
 -u useHttp.js fajlu kreiramo i eskportujemo funkciju useHttp()
@@ -318,7 +318,7 @@ Section 18: Practice Project: Building a Food Order App
 -u komponenti Meals.jsx, funkciji useHttp dodajemo parametar prazan objekt i prazan niz
 -kreiramo varijablu objekt const requestConfig = {}
 
-387. Handling HTTP Loading & Error States
+16. Handling HTTP Loading & Error States
 -kreiramo komponentu Error.jsx
 -funkciji Error dodajemo parametre destruktuirane prop title, message
 -u return izjavi kreiramo roditelj div element sa klasom error
@@ -327,7 +327,7 @@ Section 18: Practice Project: Building a Food Order App
 -u uslov if (error) dodajemo komponentu Error
 -komponenti Error dodajemo prop title, message
 
-388. Finishing Touches
+17. Finishing Touches
 -u komponentu Checkout.jsx importujemo funkciju useHttp() iz useHttp.js fajla
 -kreiramo varijablu objekt const requestConfig = { ... }
 -kreiramo funkciju useHttp() sa dva argumenta
@@ -358,3 +358,17 @@ Section 18: Practice Project: Building a Food Order App
 -u funkciju handleFinish() dodajemo cartContext.clearCart()
 -u return izjavi, Button Okay komponenti u prop onClick proslijedujemo funkciju handleFinish
 -u komponenti Checkout.jsx, u funkciju handleFinish() dodajemo funkciju clearData()
+
+18. Migrating To Form Actions
+-u komponenti Checkout.jsx, funkciju Checkout() preimenujemo u funkciju checkoutAction()
+-u jsx-u, form elementu dodajemo prop checkoutAction
+-u funkciji checkoutAction kreiramo varijablu const customerData
+
+19. Managing Form Status with Form Actions
+-u komponentu Checkout.jsx importujemo funkciju useActionState iz paketa React
+-u funkciji Checkout(), pozivamo funkciju useActionState()
+-funkciji useActionState() dadajemo dva argumenta
+-prvi argument je funkcija checkoutAction, a drugi argument je null
+-vrijednost funkcije useActionState() pohranjujemo u varijable const [formState, formAction, isSending]
+-u jsx-u, u prop action proslijedujemo funkciju formAction
+-funkciji checkoutAction() dodajemo parametar prevState

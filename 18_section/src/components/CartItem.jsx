@@ -1,6 +1,12 @@
 import { currencyFormatter } from '../util/formatting.js';
 
-const CartItem = ({ name, quantity, price, onIncrease, onDecrease }) => {
+export default function CartItem({
+  name,
+  quantity,
+  price,
+  onIncrease,
+  onDecrease,
+}) {
   return (
     <li className="cart-item">
       <p>
@@ -13,6 +19,4 @@ const CartItem = ({ name, quantity, price, onIncrease, onDecrease }) => {
       </p>
     </li>
   );
-};
-
-export default CartItem;
+}
